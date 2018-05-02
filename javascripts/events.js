@@ -23,11 +23,9 @@ const moveToCart = (e) => {
   $('#snagged').append(fishCard);
 };
 
-$('button.add').click(moveToCart);
-
 const bindEvents = () => {
-  $('button.add').click(moveToCart);
-  $('#show-sale').click(() => {
+  $('button.add').on('click', moveToCart);
+  $('#show-sale').on('click',() => {
     changeButtonText();
     filterFish();
   });
