@@ -5,7 +5,7 @@ const writeFishes = (fishes) => {
     domString += `<div class="thumbnail">`;
     domString += `<img src="${fish.imageSoure}" alt="" width="40%">`;
     domString += `<div class="caption">`;
-    domString += `<h3 id="thumbnail-label>${fish.name}</h3>`;
+    domString += `<h3 id="thumbnail-label">${fish.name}</h3>`;
     domString += `<p>$`;
     domString += `<span class="price">${fish.basePrice}</span>`;
     domString += `</p>`;

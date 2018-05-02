@@ -21,10 +21,18 @@ const moveToCart = (e) => {
   const fishCard = $(e.target).closest('.fish');
   console.log('fish card', fishCard);
   $('#snagged').append(fishCard);
+  $(e.target).text('Remove from Cart').removeClass('add btn-danger').addClass('remove btn-info');
+};
+
+const removeFromCart = (e) => {
+  const fishCard = $(e.target).closest('.fish');
+  $('#available').append(fishCard);
+  $(e.target).text('Add to Cart').removeClass('remove btn-info').addClass('add btn-danger');
 };
 
 const bindEvents = () => {
-  $('button.add').on('click', moveToCart);
+  $('body').on('click', '.remove', removeFromCart);
+  $('body').on('click', '.add', moveToCart);
   $('#show-sale').on('click',() => {
     changeButtonText();
     filterFish();
